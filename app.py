@@ -11,12 +11,12 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'Nohossat',
-    'last_name' : 'TRAORE',
-    'address' : '9 rue Léon Giraud · PARIS · FRANCE',
+    'first_name': 'bc',
+    'last_name' : 'A',
+    'address' : 'Normal University',
     'job': 'Web developer',
     'tel': '0678282923',
-    'email': 'nohossat.tra@yahoo.com',
+    'email': '1234567890@yahoo.com',
     'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
     'social_media' : [
         {
@@ -29,11 +29,11 @@ person = {
         },
         {
             'link': 'linkedin.com/in/nono',
-            'icon' : 'fa-linkedin-in'
+            'icon' : 'fa-qq'
         },
         {
             'link': 'https://twitter.com/nono',
-            'icon' : 'fa-twitter'
+            'icon' : 'fa-weixin'
         }
     ],
     'img': 'img/img_nono.jpg',
@@ -91,14 +91,13 @@ person = {
         'MySQL' : ['fa-database', '60'],
         'NodeJS' : ['fa-node-js', '50']
     },
-    'languages' : {'French' : 'Native', 'English' : 'Professional', 'Spanish' : 'Professional', 'Italian' : 'Limited Working Proficiency'},
-    'interests' : ['Dance', 'Travel', 'Languages']
+    'languages' : {'英语' : '六级'},
+    'interest' : ['羽毛球', '旅游', '语言', '电影']
 }
 
 @app.route('/')
 def cv(person=person):
     return render_template('index.html', person=person)
-
 
 
 
