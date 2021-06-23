@@ -11,28 +11,30 @@ import csv, re, operator
 app = Flask(__name__)
 
 person = {
-    'first_name': 'bc',
-    'last_name' : 'A',
+    'first_name': 'Y',
+    'last_name' : 'X',
     'address' : 'Normal University',
     'job': 'Web developer',
     'tel': '0678282923',
     'email': '1234567890@yahoo.com',
-    'description' : 'Suite à une expérience internationale en développement web et dans le domaine des arts, l’impact de l’intelligence artificielle dans nos vies me surprend de jour en jour. \n Aujourd’hui, je souhaite changer de cap et comprendre les secrets que recèlent nos données. J’aimerais mettre à profit ces découvertes au service des entreprises/associations à dimension sociale.',
+    'qq':'11111111',
+    'wechat':'11111111',
+    'description' : '本人性格开朗与人处事融洽，对工作善始善终，能承受日益严重的竞争压力，并能在成功与失败中完善自己。\n活泼开朗乐观向上适应力强勤奋好学认真负责坚毅不拔勇于迎接新挑战。擅长业务具有良好的沟通潜力与团队合作精神。',
     'social_media' : [
         {
-            'link': 'https://www.facebook.com/nono',
-            'icon' : 'fa-facebook-f'
+            'link': 'https://www.csdn.net/',
+            'icon' : ''
         },
         {
-            'link': 'https://github.com/nono',
+            'link': 'https://github.com/',
             'icon' : 'fa-github'
         },
         {
-            'link': 'linkedin.com/in/nono',
-            'icon' : 'fa-qq'
+            'link': 'https://www.cnblogs.com/',
+            'icon' : ''
         },
         {
-            'link': 'https://twitter.com/nono',
+            'link': 'https://twitter.com/',
             'icon' : 'fa-weixin'
         }
     ],
@@ -92,7 +94,7 @@ person = {
         'NodeJS' : ['fa-node-js', '50']
     },
     'languages' : {'英语' : '六级'},
-    'interest' : ['羽毛球', '旅游', '语言', '电影']
+    'interests' : ['羽毛球', '旅游', '语言', '电影']
 }
 
 @app.route('/')
