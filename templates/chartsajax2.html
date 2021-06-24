@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js'></script> 
+    <script>
+        function cb_2(selection) {
+            $.getJSON({
+                data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart1', result, {});;
+                }
+            });
+        }
+    </script>
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>election数据及分析</h1>
+
+    <div id="chart" class="chart"></div>
+    <div id="chart1" class="chart1"></div>
+</body>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+
+    d1 = {{ graphJSON1 | safe }};
+    Plotly.newPlot('chart1', d1, {});
+
+</script>
+
+
+
+</html>

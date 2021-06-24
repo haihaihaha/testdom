@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js'></script> 
     <script>
         function cb(selection) {
             $.getJSON({
@@ -19,17 +20,86 @@
 </head>
 
 <body style="font-family:arial, sans-serif">
-    <h1>1952-2007年的各国GDP可视化</h1>
+    <h1>1952-2007年的各国GDP/LifeExp可视化</h1>
     <h2>输入国家如：India或China（大写字母开头）</h2>
-    
+   
     <input type="text" id="fname" name="fname" onchange="cb(this.value)">
-    <div id="chart" class="chart"></div>
+
+    <div>
+        <h2>散点图</h2>
+
+        <p>该图</p>
+    </div>    
+
+    <div>
+        <h2>散点图</h2>
+        <div id="chart" class="chart"></div>
+        <p>该图描绘了year-LifeExp关系的散点图</br>从图中可以看出，人均寿命随这年份的变化为增加。</p>
+    </div>
+
+    <div>
+        <h2>直方图</h2>
+        <div id="chart1" class="chart1"></div>
+        <p>该图描绘了各国从1952-2007每年的GDP量</br>从图中可以看出，GDP量随着年份的增加也在逐步增长，标志着一个国家的发展状态良好。</p>
+    </div>
+
+    <div>
+        <h2>散点图</h2>
+        <div id="chart2" class="chart2"></div>
+        <p>该图描绘了2007年，各洲GDP-LifeExp的变化，绘制在一个图里，可以直观地看出各洲的差距。该图可进行放大，在右侧可以选择想看的洲。可以看出，总体是呈上升趋势的。</p>
+    </div>
+ 
+    <div>
+        <h2>散点图</h2>
+        <div id="chart3" class="chart3"></div>
+        <p>该图就是改变了上一个图形的每个点的大小，看起来更加美观。把鼠标放在上面, 会出现国家的信息, 以此来进行交互</p>
+    </div>   
+    <div>
+        <h2>散点图</h2>
+        <div id="chart4" class="chart4"></div>
+        <p>该图是将上一个图形根据洲切割出来，使得各洲的数据更加直观。这样就可以很明显的看出每一个大洲的确切的情况了, 比如我们可以看到亚洲有两个圆的size比较大, 亚洲有两个大国. 欧洲国家都比较集中, gdp和人均寿命都是比较高的.我们还可以根据标签来进行子图的绘制, 比如我们可以按照大洲的分布, 来绘制五大洲每个国家的子图.</p>
+    </div>
+    <div>
+        <h2>散点图</h2>
+        <div id="chart5" class="chart5"></div>
+        <p>该图我们想要同时看很多年的信息应该怎么办呢, 我们可以使用动画(动图)的方式, 来展示每一年的变化. </p>
+    </div>
+    <div>
+        <h2>Plotly绘制关于地理的图形</h2>
+    <div id="chart6" class="chart6"></div>
+        <p>该图展示各个地区的人均寿命和时间的关系，最终的效果如图所示, 黄色表示人均寿命较高, 可以看到随着年份的推移, 世界的整体形势是在变好的</p>
+    </div>            
+    
+    
+    
+
+</body>
 </body>
 
 <script>
     d = {{ graphJSON | safe }};
     Plotly.newPlot('chart', d, {});
+
+    d1 = {{ graphJSON1 | safe }};
+    Plotly.newPlot('chart1', d1, {});
+
+    d2 = {{ graphJSON2 | safe }};
+    Plotly.newPlot('chart2', d2, {});
+
+    d3 = {{ graphJSON3 | safe }};
+    Plotly.newPlot('chart3', d3, {});
+
+    d4 = {{ graphJSON4 | safe }};
+    Plotly.newPlot('chart4', d4, {});
+
+    d5 = {{ graphJSON5 | safe }};
+    Plotly.newPlot('chart5', d5, {});
+
+    d6 = {{ graphJSON6 | safe }};
+    Plotly.newPlot('chart6', d6, {});
+
 </script>
+
 
 
 </html>

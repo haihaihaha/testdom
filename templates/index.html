@@ -50,6 +50,7 @@
       <div class="name-wrapper">
         <h1>{{person.first_name}} <br/>{{person.last_name}}</h1><!-- YOUR NAME AND LAST NAME  -->
       </div>
+      
       <div class="clearfix"></div>
       <div class="contact-info clearfix">
       	<ul class="list-titles">
@@ -91,6 +92,12 @@
   
   <section class="experience section-padding">
   	<div class="container">
+      <h3>作品展示</h3>
+      <p><a href="{{url_for('index')}}" target="_blank">对gapminder数据集分析</a></p>
+      <p><a href="{{url_for('index1')}}" target="_blank">对tips数据集分析</a></p>
+      <p><a href="{{url_for('index2')}}" target="_blank">对election数据集分析</a></p>
+      <p><a href="{{url_for('index3')}}" target="_blank">对wind数据集分析</a></p>
+      </dr>
   		<h3 class="experience-title">经历</h3>
                
       <div class="experience-wrapper">   
@@ -108,7 +115,7 @@
           </div>
         </div>
         {% endfor %}
-        
+      
       </div><!--Skill experience-->
       
       <div class="section-wrapper clearfix">
@@ -136,7 +143,6 @@
           {% endfor %}
         </ul>
       </div>
-      
   	</div>
   </section>
   

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src='https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js'></script> 
+    <script>
+        function cb_1(selection) {
+            $.getJSON({
+                data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart1', result, {});;
+                }
+            });
+        }
+    </script>
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>tips数据及分析</h1>
+
+    <div id="chart" class="chart"></div>
+    <div id="chart1" class="chart"></div>
+    <div id="chart2" class="chart"></div>
+    <div id="chart3" class="chart"></div>
+    <div id="chart4" class="chart"></div>
+    <div id="chart5" class="chart"></div>
+    <div id="chart6" class="chart"></div>
+    <div id="chart7" class="chart"></div>
+</body>
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+
+    d1 = {{ graphJSON1 | safe }};
+    Plotly.newPlot('chart1', d1, {});
+
+    d2 = {{ graphJSON2 | safe }};
+    Plotly.newPlot('chart2', d2, {});
+
+    d3 = {{ graphJSON3 | safe }};
+    Plotly.newPlot('chart3', d3, {});
+
+    d4 = {{ graphJSON4 | safe }};
+    Plotly.newPlot('chart4', d4, {});
+
+    d5 = {{ graphJSON5 | safe }};
+    Plotly.newPlot('chart5', d5, {});
+
+    d6 = {{ graphJSON6 | safe }};
+    Plotly.newPlot('chart6', d6, {});
+
+    d7 = {{ graphJSON7 | safe }};
+    Plotly.newPlot('chart7', d7, {});
+
+</script>
+
+
+
+</html>
